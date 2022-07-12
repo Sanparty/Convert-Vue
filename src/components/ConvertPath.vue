@@ -17,20 +17,15 @@
     <p id="macpath">
       <MacPath />
     </p>
-    <hr>
-    <p id="windowspath">
-      <WindowsPath />
-    </p>
   </div>
 </template>
 
 <script>
 import MacPath from "./MacPath.vue";
-import WindowsPath from "./WindowsPath.vue";
 
 export default {
   name: "ConvertPath",
-  components: { MacPath, WindowsPath },
+  components: { MacPath },
 };
 </script>
 
