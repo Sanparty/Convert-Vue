@@ -30,6 +30,7 @@ export default {
 }
 hr {
   width: 50%;
+  max-width: 500px;
 }
 .convert {
   margin: 0 auto;
