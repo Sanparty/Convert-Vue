@@ -133,5 +133,8 @@ button {
   html {
     font-size: 16px;
   }
+  textarea {
+    width: 40%;
+    }
 }
 </style>

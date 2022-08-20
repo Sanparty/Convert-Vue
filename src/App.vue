@@ -10,6 +10,9 @@ export default {
   components: {
     ConvertPath,
   },
+  mounted() {  
+    document.title = "Convert Your File Path";  
+  },  
 };
 </script>
 
