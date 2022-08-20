@@ -1,5 +1,8 @@
 # convert-vue
 
+ an app to convert Mac file locations to Windows file locations
+I originally created this app with Javascript that I have now turned into components using Vue Js
+
 ## Project setup
 ```
 npm install
