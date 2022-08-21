@@ -81,7 +81,7 @@ p {
     flex-direction: column;
     text-align: center;
     justify-content: center;
-    margin: 20px auto;
+    margin: 20px auto 10px;
     padding: 0 20px;
 }
 
