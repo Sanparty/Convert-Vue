@@ -1,6 +1,6 @@
 <template>
     <div class="copyright-container">
-        <span class="copyright">&copy;Daniel San Pedro, 2022</span>
+        <span class="copyright">&copy;Daniel San Pedro, {{  new Date().getFullYear() }}</span>
     </div>
 </template>
 
