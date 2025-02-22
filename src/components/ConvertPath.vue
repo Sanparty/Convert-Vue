@@ -1,23 +1,23 @@
 <template>
-    <div class="main">
-      <convert-info />
-      <hr>
-      <mac-path />
-      <footer-dan />
-    </div>
+  <div class="main">
+    <convert-info />
+    <hr />
+    <mac-path />
+    <footer-dan />
+  </div>
 </template>
 
 <script>
 import MacPath from "./MacPath.vue";
 import ConvertInfo from "./ConvertInfo.vue";
-import FooterDan from "./FooterDan.vue"
+import FooterDan from "./FooterDan.vue";
 
 export default {
   name: "ConvertPath",
-  components: { 
+  components: {
     MacPath,
     ConvertInfo,
-    FooterDan
+    FooterDan,
   },
 };
 </script>
@@ -35,8 +35,5 @@ export default {
 hr {
   width: 50%;
   max-width: 500px;
-}
-.convert {
-  margin: 0 auto;
 }
 </style>

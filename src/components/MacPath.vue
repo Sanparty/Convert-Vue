@@ -1,39 +1,41 @@
 <template>
   <div class="convert-container">
+    <div>
+      <div><strong>Original Mac File Path:</strong></div>
       <div>
-        <div><strong>Original Mac File Path:</strong></div>
-        <div>
-          <textarea
-            name="macLocation"
-            id="macLocation"
-            placeholder="Enter or paste Mac file path here"
-            rows="5"
-            cols="75"
-            required
-            v-model="originalText"
-          ></textarea>
-        </div>
+        <textarea
+          name="macLocation"
+          id="macLocation"
+          placeholder="Enter or paste Mac file path here"
+          rows="5"
+          cols="75"
+          required
+          v-model="originalText"
+        ></textarea>
       </div>
-      <div>
-        <div id="textDisplay"></div>
-        <div id="filepath">
-          <div v-if="convertedText"><strong>New Windows File Path:</strong></div>
-        </div>
-        <div id="newPath">
-          <div id="windowsLocation">{{ convertedText }}</div>
-        </div>
-        <div v-if="convertedText">
-          <button
-            type="button"
-            @click="copyText()"
-            style="margin-left: 10px"
-            id="copyButton"
-          >
-            Copy Windows File Path to clipboard
-          </button>
-        </div>
-        <div v-if="convertedText || originalText"><button @click="clearAll()">Clear</button></div>
+    </div>
+    <div>
+      <div id="textDisplay"></div>
+      <div id="filepath">
+        <div v-if="convertedText"><strong>New Windows File Path:</strong></div>
       </div>
+      <div id="newPath">
+        <div id="windowsLocation">{{ convertedText }}</div>
+      </div>
+      <div v-if="convertedText">
+        <button
+          type="button"
+          @click="copyText()"
+          style="margin-left: 10px"
+          id="copyButton"
+        >
+          Copy Windows File Path to clipboard
+        </button>
+      </div>
+      <div v-if="convertedText || originalText">
+        <button @click="clearAll()">Clear</button>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -49,10 +51,8 @@ export default {
   watch: {
     originalText() {
       this.convertedText = this.originalText.replaceAll("/", "\\");
-      if (this.convertedText.includes(":")) {
-        this.convertedText = this.convertedText.split(":");
-        this.convertedText = this.convertedText[1];
-      }
+      if (this.convertedText.includes(":"))
+        this.convertedText = this.convertedText.split(":")[1];
     },
   },
   methods: {
@@ -77,12 +77,12 @@ p {
 }
 
 .convert-container {
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    justify-content: center;
-    margin: 20px auto 10px;
-    padding: 0 20px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  margin: 20px auto 10px;
+  padding: 0 20px;
 }
 
 textarea {
@@ -112,21 +112,21 @@ button {
 }
 
 #windowsLocation {
-    word-break: break-all;
-    word-wrap: break-word;
+  word-break: break-all;
+  word-wrap: break-word;
 }
 
 @media (min-width: 650px) {
-    .convert-container {
-        width: 100%;
-    }
-    #windowsLocation {
-        word-break: normal;
-        word-wrap: normal;
-    }
-    textarea {
+  .convert-container {
+    width: 100%;
+  }
+  #windowsLocation {
+    word-break: normal;
+    word-wrap: normal;
+  }
+  textarea {
     width: 50%;
-    } 
+  }
 }
 
 @media (min-width: 768px) {
@@ -135,6 +135,6 @@ button {
   }
   textarea {
     width: 40%;
-    }
+  }
 }
 </style>
